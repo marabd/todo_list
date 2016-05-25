@@ -2,7 +2,8 @@
 <hr />
 <% @items.each do |item| %>
 	<h2><%= item.name %></h2>
-	<h3><%= item.description %></h3>
+	<h3><%= "Priority" %>: <%= item.priority %></h3>
+	<h3><%= "Completed" %>: <%= item.complete %></h3>
 	<%= link_to 'Show Item', item_path(item) %>
 	<%= link_to 'Edit', edit_item_path(item) %>
 	<%= link_to 'Delete', item_path(item), method: :delete %>

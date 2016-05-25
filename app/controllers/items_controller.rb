@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-  	@items = Item.all
+  	@items = Item.all.order('priority ASC')#.reorder('priority ASC')  	
   end
 
   def new
@@ -46,6 +46,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-  	params.require(:item).permit(:name, :description)
+  	params.require(:item).permit(:name, :description, :complete, :priority)
   end
 end
